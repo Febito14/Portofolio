@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <style>
+      /* Styling dasar untuk seluruh halaman */
+      body {
+        font-family: Arial, sans-serif; /* Menggunakan font Arial */
+        background-color: #eef1ef; /* Warna latar belakang abu terang */
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh; /* Tinggi minimum halaman setara dengan 100% layar */
+      }
+
+      /* Wrapper utama untuk mengatur konten secara terpusat */
+      .page-wrapper {
+        max-width: 800px; /* Maksimal lebar halaman */
+        margin: 0 auto; /* Memusatkan elemen */
+        display: flex;
+        flex-direction: column;
+        gap: 30px; /* Jarak antar elemen */
+      }
+
+      /* Styling untuk container form login */
+      .login-container {
+        background-color: white; /* Latar belakang putih untuk form */
+        padding: 20px;
+        border-radius: 8px; /* Membulatkan sudut form */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+      }
+
+      /* Header dan paragraf pada form */
+      .login-container h1,
+      p {
+        margin-bottom: 20px; /* Jarak bawah */
+        text-align: center; /* Teks rata tengah */
+      }
+
+      /* Styling untuk input pada form */
+      .login-container input[type="text"],
+      .login-container input[type="password"] {
+        width: 100%; /* Input memiliki lebar penuh */
+        padding: 10px; /* Padding internal */
+        margin: 10px 0; /* Jarak vertikal antar input */
+        border: 1px solid #ccc; /* Border abu-abu terang */
+        border-radius: 20px; /* Membulatkan sudut input */
+        box-sizing: border-box; /* Menghitung padding di dalam lebar input */
+      }
+
+      /* Styling untuk tombol submit, reset, dan button */
+      .login-container input[type="submit"],
+      .login-container input[type="button"],
+      .login-container input[type="reset"] {
+        width: 31%; /* Ukuran tombol disesuaikan agar muat dalam 3 kolom */
+        padding: 15px; /* Padding tombol */
+        border: none; /* Menghapus border default */
+        border-radius: 10px; /* Membulatkan sudut tombol */
+        color: white; /* Teks putih */
+        cursor: pointer; /* Kursor berubah saat hover */
+        margin-top: 10px; /* Jarak di atas tombol */
+        transition: opacity 0.3s; /* Efek halus saat hover */
+      }
+
+      /* Warna khusus untuk tombol submit dan button */
+      .login-container input[type="submit"],
+      .login-container input[type="button"] {
+        background-color: #365486; /* Warna biru untuk tombol utama */
+      }
+
+      /* Warna khusus untuk tombol reset */
+      .login-container input[type="reset"] {
+        background-color: #f44336; /* Warna merah untuk tombol reset */
+      }
+
+      /* Efek hover pada tombol */
+      .login-container input[type="submit"]:hover,
+      .login-container input[type="button"]:hover,
+      .login-container input[type="reset"]:hover {
+        opacity: 0.9; /* Transparansi sedikit saat di-hover */
+      }
+
+      /* Container untuk tutorial */
+      .tutorial-container {
+        display: grid; /* Tata letak grid untuk kotak tutorial */
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(300px, 1fr)
+        ); /* Kolom grid otomatis */
+        gap: 20px; /* Jarak antar elemen grid */
+        padding: 20px;
+        margin-top: 10px; /* Jarak antara form login dan tutorial */
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+      }
+
+      /* Styling untuk kotak tutorial */
+      .tutorial-box {
+        padding: 20px;
+        background-color: #365486; /* Warna latar belakang biru */
+        color: #e5e5e5; /* Warna teks terang */
+        font-size: 16px;
+        border-radius: 10px; /* Membulatkan sudut */
+        transition: transform 0.3s ease; /* Efek transisi untuk hover */
+        box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371); /* Efek bayangan */
+      }
+
+      /* Efek hover pada kotak tutorial */
+      .tutorial-box:hover {
+        transform: scale(1.02); /* Zoom sedikit saat di-hover */
+      }
+
+      /* Teks pada kotak tutorial */
+      .tutorial-box p {
+        margin: 0;
+        text-align: left; /* Teks rata kiri */
+      }
+      /* Styling untuk kotak biru yang berisi syntax */
+      .syntax-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .syntax-box {
+        background-color: #ffffff;
+        color: #1e3a61;
+        padding: 15px;
+        border-radius: 10px;
+        width: 45%;
+         box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371); 
+      }
+
+      /* Desain responsif untuk layar kecil */
+      @media (max-width: 768px) {
+        .tutorial-container {
+          grid-template-columns: 1fr; /* Menjadikan satu kolom pada layar kecil */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <h1 style="text-align: center">Tutorial Form Login</h1>
+      <!-- Container untuk form login -->
+      <div class="login-container">
+        <h1>Login</h1>
+        <p>Lakukan Login untuk masuk ke dalam website</p>
+
+        <!-- Form login -->
+        <form id="loginForm">
+          <!-- Field untuk username -->
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+
+          <!-- Field untuk password -->
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <!-- Tombol untuk submit, register, dan reset -->
+          <div style="display: flex; justify-content: space-between">
+            <input type="submit" value="Login" />
+            <input type="button" value="Register" onclick="goToRegister()" />
+            <input type="reset" value="Reset" />
+          </div>
+        </form>
+      </div>
+
+      <!-- Bagian Tutorial -->
+      <h1 style="text-align: center">HTML Element Form Login</h1>
+      <div class="tutorial-container">
+        <!-- Penjelasan tentang elemen form -->
+        <div class="tutorial-box">
+          <p>
+            <code>&lt;form&gt;</code> - Digunakan untuk mendefinisikan form
+            HTML. Semua input berada di dalam elemen ini.
+          </p>
+        </div>
+        <div class="tutorial-box">
+          <p>
+            <code>&lt;label&gt;</code> - Elemen untuk mendefinisikan label bagi
+            input, membantu pengguna mengerti input yang diperlukan.
+          </p>
+        </div>
+        <div class="tutorial-box">
+          <p>
+            <code>&lt;input type="text"&gt;</code> - Digunakan untuk menerima
+            teks dari pengguna (misalnya, nama pengguna).
+          </p>
+        </div>
+        <div class="tutorial-box">
+          <p>
+            <code>&lt;input type="password"&gt;</code> - Input untuk menerima
+            kata sandi, teks yang dimasukkan akan tersembunyi.
+          </p>
+        </div>
+        <div class="tutorial-box">
+          <p>
+            <code>&lt;input type="submit"&gt;</code> - Tombol untuk mengirim
+            form yang telah diisi oleh pengguna.
+          </p>
+        </div>
+        <div class="tutorial-box">
+          <p>
+            <code>&lt;input type="reset"&gt;</code> - Tombol untuk mengatur
+            ulang atau mereset semua input di dalam form.
+          </p>
+        </div>
+        <div class="tutorial-box">
+          <p>
+            <code>&lt;input type="button"&gt;</code> - Tombol yang dapat
+            melakukan tindakan lain, misalnya mengarahkan ke halaman register.
+          </p>
+        </div>
+      </div>
+
+      <!-- INI ADALAH SYNTAC UNTUK LOGIN -->
+      <div class="page-wrapper">
+        <h1 style="text-align: center">Syntax Form Login</h1>
+
+        <!-- Syntax form login -->
+        <div class="syntax-container">
+          <div class="syntax-box">
+            <code>
+              &lt;div class="page-wrapper"&gt;<br />
+              &lt;h1 style="text-align: center"&gt;Tutorial Form
+              Login&lt;/h1&gt;<br />
+              &lt;!-- Container untuk form login --&gt;
+            </code>
+            <code>
+              &lt;div class="login-container"&gt;<br />
+              &lt;h1&gt;Login&lt;/h1&gt;<br />
+              &lt;p&gt;Lakukan Login untuk masuk ke dalam website&lt;/p&gt;
+            </code>
+            <code>
+              &lt;form id="loginForm"&gt;<br />
+              &lt;!-- Field untuk username --&gt;<br />
+              &lt;label for="username"&gt;Username:&lt;/label&gt;<br />
+              &lt;input type="text" id="username" name="username" required /&gt;
+            </code>
+            <code>
+              &lt;!-- Field untuk password --&gt;<br />
+              &lt;label for="password"&gt;Password:&lt;/label&gt;<br />
+              &lt;input type="password" id="password" name="password" required
+              /&gt;
+            </code>
+            <code>
+              &lt;!-- Tombol untuk submit, register, dan reset --&gt;<br />
+              &lt;div style="display: flex; justify-content:
+              space-between"&gt;<br />
+              &lt;input type="submit" value="Login" /&gt;<br />
+              &lt;input type="button" value="Register" onclick="goToRegister()"
+              /&gt;<br />
+              &lt;input type="reset" value="Reset" /&gt;<br />
+              &lt;/div&gt;
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript untuk validasi form dan navigasi -->
+    <script>
+      // Validasi form login
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          var password = document.getElementById("password").value;
+
+          // Validasi sederhana untuk password (minimal 6 karakter)
+          if (password.length < 6) {
+            alert("Mohon Maaf, Password anda tidak sesuai");
+            event.preventDefault(); // Mencegah pengiriman form jika password tidak valid
+          }
+        });
+
+      // Fungsi untuk mengarahkan ke halaman register
+      function goToRegister() {
+        window.location.href = "form.html"; // Mengarahkan pengguna ke form.html (halaman register)
+      }
+    </script>
+  </body>
+</html>
