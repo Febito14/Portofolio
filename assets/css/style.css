@@ -20,7 +20,12 @@
   --third-color: #0f1035; /* Emas mewah dan tegas untuk elemen penting dan aksen premium */
 
   /* Shadow and Hover Effects */
-  --first-shadow-color: rgba(62, 110, 155, 0.993); /* Shadow putih lembut untuk menambah kedalaman */
+  --first-shadow-color: rgba(
+    62,
+    110,
+    155,
+    0.993
+  ); /* Shadow putih lembut untuk menambah kedalaman */
   --second-shadow-color: rgba(
     0,
     0,
@@ -393,8 +398,19 @@ h3 {
 }
 .project-box > i {
   font-size: 50px;
-  color: #0f1035;
+  color: #16195b;
   margin-bottom: 25px;
+  transition: color 0.4s ease;
+  z-index: 2;
+}
+.project-box > h3 {
+  font-size: 20px;
+  color: #365486;
+  margin-bottom: 25px;
+  transition: color 0.4s ease;
+  z-index: 2;
+  padding: 0 10px;
+  text-align: center;
 }
 .project-box label {
   font-size: 15px;

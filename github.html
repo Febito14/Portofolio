@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Connection</title>
+
+    <style>
+      /* style.css */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #365486;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      section {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(35, 67, 175, 0.584);
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      p,
+      code {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #365486;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Cara Menghubungkan Project ke GitHub</h1>
+      <p>
+        Ikuti langkah-langkah di bawah ini untuk menghubungkan proyek Anda ke
+        GitHub secara online.
+      </p>
+    </header>
+
+    <section>
+      <h2>Langkah 1: Membuat Repository di GitHub</h2>
+      <p>
+        Buka <a href="https://github.com">GitHub</a>, login, dan buat repository
+        baru dengan mengklik "New".
+      </p>
+      <code>git init</code> – Inisialisasi Git di folder proyek lokal Anda.<br />
+      <code
+        >git remote add origin
+        https://github.com/username/nama-repository.git</code
+      >
+      – Tambahkan repository remote GitHub.<br />
+    </section>
+
+    <section>
+      <h2>Langkah 2: Push Proyek Anda ke GitHub</h2>
+      <p>
+        Setelah proyek Anda siap, gunakan perintah berikut untuk mengunggah kode
+        Anda ke GitHub:
+      </p>
+      <code>git add .</code> – Mengambil semua file untuk di-commit.<br />
+      <code>git commit -m "Initial commit"</code> – Commit perubahan yang sudah
+      dilakukan.<br />
+      <code>git push -u origin master</code> – Push kode ke repository
+      GitHub.<br />
+      <code>git status</code> – Melihat status file anda yang sudah di masukan
+      ke repository GitHub.<br />
+    </section>
+
+    <section>
+      <h2>Langkah 3: Verifikasi Repository Anda</h2>
+      <p>
+        1. Kembali ke repository Anda di GitHub dan pastikan semua file telah
+        berhasil diunggah.
+      </p>
+      <p>
+        2. Masuk ke Setting -> lalu pilih bagian page -> pilih bagian branch ->
+        pilih yang Main -> save
+      </p>
+      3. Tunggu beberapa menit 1-2 menit nanti akan terlihat link project anda
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Tutorial GitHub</p>
+    </footer>
+  </body>
+</html>
