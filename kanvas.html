@@ -3,44 +3,425 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kanvas</title>
-  </head>
-  <body>
-    <p>Pilih Gambar :</p>
-
-    <img
-      id="gambar"
-      src="assets/images/KENZO PROFILE.jpg"
-      alt=""
-      width="220"
-      height="277"
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
     />
 
-    <p>Mengisi :</p>
-    <!-- Settingan elemen canvas dimana tempat gmbar akan di gambar -->
-    <canvas
-      id="kanvas"
-      width="220"
-      height="277"
-      style="border: 1px solid #d3d3d3"
-    >
-      your browser does not support the HTML5 canvas tag.</canvas
-    >
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="style.css" />
 
-    <p><button onclick="kanvas()">Try It</button></p>
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <title>Tutorial Kanvas</title>
+    <style>
+      /* Style untuk body */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+      }
+
+      /* Style untuk judul halaman */
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      h3 {
+        color: #555;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /* Container utama untuk input dan kanvas */
+      .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 600px;
+      }
+
+      /* Style untuk gambar dan canvas */
+      #gambar,
+      #kanvas {
+        width: 300px;
+        height: 350px;
+        border: 1px solid #ccc;
+      }
+
+      /* Style untuk tombol */
+      button {
+        padding: 8px 24px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Container untuk tutorial */
+      .tutorial-container {
+        display: grid; /* Tata letak grid untuk kotak tutorial */
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(300px, 1fr)
+        ); /* Kolom grid otomatis */
+        gap: 20px; /* Jarak antar elemen grid */
+        padding: 20px;
+        margin-top: 10px; /* Jarak antara form login dan tutorial */
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+      }
+
+      /* Styling untuk kotak tutorial */
+      .tutorial-boxer {
+        padding: 20px;
+        background-color: #365486; /* Warna latar belakang biru */
+        color: #e5e5e5; /* Warna teks terang */
+        font-size: 16px;
+        border-radius: 10px; /* Membulatkan sudut */
+        transition: transform 0.3s ease; /* Efek transisi untuk hover */
+        box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371); /* Efek bayangan */
+      }
+
+      /* Efek hover pada kotak tutorial */
+      .tutorial-boxer:hover {
+        transform: scale(1.02); /* Zoom sedikit saat di-hover */
+      }
+
+      /* Teks pada kotak tutorial */
+      .tutorial-boxer p {
+        margin: 0;
+        text-align: left; /* Teks rata kiri */
+      }
+
+      /* code {
+        color: #52a8ff;
+      } */
+
+      /* Style untuk kotak syntax */
+      .syntax-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 90%;
+        max-width: 800px;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        color: #1e3a61;
+        border-radius: 10px;
+        box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371);
+      }
+
+      .syntax-box {
+        background-color: #e1e1fb;
+        color: #333;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        overflow-x: auto; /* Tambahkan scroll horizontal untuk konten yang panjang */
+        white-space: pre-wrap; /* Bungkus teks panjang pada layar kecil */
+        word-wrap: break-word; /* Putus kata panjang jika diperlukan */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive styling */
+      @media (max-width: 768px) {
+        .tutorial-container {
+          justify-content: center; /* Center content on small screens */
+          margin: 10px 20px; /* Adjust margin for smaller screens */
+        }
+
+        .syntax-box {
+          font-size: 13px;
+        }
+      }
+      @media (max-width: 480px) {
+        .tutorial-container {
+          padding: 10px; /* Reduce padding for smaller screens */
+          margin: 5px 10px; /* Reduce margin for very small screens */
+        }
+
+        .syntax-box {
+          font-size: 16px; /* Adjust font size for better readability */
+          padding: 15px; /* Adjust padding */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tutorial Kanvas</h1>
+
+    <!-- Main container untuk input file dan kanvas -->
+    <div class="main-container">
+      <p>Pilih Gambar Dari Perangkat Anda :</p>
+      <input type="file" id="fileInput" accept="image/*" />
+      <img id="gambar" alt="Gambar tidak tersedia" style="display: none" />
+      <canvas id="kanvas" width="220" height="277"
+        >your browser does not support the HTML5 canvas tag.</canvas
+      >
+      <button onclick="kanvas()">Try</button>
+    </div>
+
+    <!-- Tutorial Section -->
+    <h1>Elemen HTML untuk Kanvas</h1>
+    <h3>
+      Berikut ini adalah beberapa elemen HTML yang digunakan dalam pembuatan
+      kanvas
+    </h3>
+    <div class="tutorial-container">
+      <div class="tutorial-boxer">
+        <p>
+          <code>&lt;canvas&gt;</code> - Elemen untuk membuat area gambar atau
+          grafis di halaman HTML menggunakan JavaScript.
+        </p>
+      </div>
+      <div class="tutorial-boxer">
+        <p>
+          <code>&lt;img&gt;</code> - Elemen untuk menampilkan gambar di halaman
+          HTML. Gambar ini dapat digunakan sebagai sumber untuk digambar di
+          kanvas.
+        </p>
+      </div>
+      <div class="tutorial-boxer">
+        <p>
+          <code>&lt;button&gt;</code> - Elemen untuk membuat tombol yang dapat
+          diklik. Dalam kasus ini, tombol digunakan untuk menjalankan fungsi
+          yang menggambar gambar di kanvas.
+        </p>
+      </div>
+      <div class="tutorial-boxer">
+        <p>
+          <code>&lt;input type="file"&gt;</code> - Elemen input yang
+          memungkinkan pengguna memilih file dari perangkat mereka, seperti
+          gambar untuk ditampilkan di kanvas.
+        </p>
+      </div>
+    </div>
+
+    <!-- Syntax Code Section -->
+    <div class="syntax-container">
+      <h1 style="text-align: center">Syntax Code Kanvas HTML</h1>
+      <div class="syntax-box">
+        <code>
+          &lt;!DOCTYPE html&gt;<br />
+          &lt;html lang="en"&gt;<br />
+          &lt;head&gt;<br />
+          &lt;meta charset="UTF-8" /&gt;<br />
+          &lt;meta name="viewport" content="width=device-width,
+          initial-scale=1.0" /&gt;<br />
+          &lt;title&gt;Kanvas&lt;/title&gt;<br />
+          &lt;/head&gt;<br />
+          &lt;body&gt;<br />
+          &lt;h1&gt;Tutorial Kanvas&lt;/h1&gt;<br />
+          &lt;input type="file" id="fileInput" accept="image/*" /&gt;<br />
+          &lt;div&gt;<br />
+          &lt;img id="gambar" alt="Gambar tidak tersedia" style="display: none"
+          /&gt;<br />
+          &lt;canvas id="kanvas" width="220" height="277"&gt;&lt;/canvas&gt;<br />
+          &lt;button onclick="kanvas()"&gt;Try&lt;/button&gt;<br />
+          &lt;/div&gt;<br />
+          &lt;/body&gt;<br />
+          &lt;/html&gt;
+        </code>
+      </div>
+    </div>
+
+    <!-- -------------- MAIN ---------------- -->
+    <main class="wrapper">
+      <section class="section" id="tutorials">
+        <div class="top-header">
+          <h1>Tutorial: Kanvas</h1>
+        </div>
+        <!-- Card Style untuk Latihan Page Margin -->
+        <div class="tutorial-box">
+          <h2>1. Latihan Membuat Canvas</h2>
+          <p>Latihan untuk membuat Canvas</p>
+
+          <h3>HTML & CSS Code:</h3>
+          <textarea
+            class="editor"
+            rows="20"
+            id="contentCode"
+            placeholder="Masukkan kode HTML dan CSS di sini"
+          >
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <title>Tutorial Kanvas</title>
+    <style>
+      /* Style untuk body */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+      }
+
+      /* Style untuk judul halaman */
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      h3 {
+        color: #555;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /* Container utama untuk input dan kanvas */
+      .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 600px;
+      }
+
+      /* Style untuk gambar dan canvas */
+      #gambar,
+      #kanvas {
+        width: 300px;
+        height: 350px;
+        border: 1px solid #ccc;
+      }
+
+      /* Style untuk tombol */
+      button {
+        padding: 8px 24px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tutorial Kanvas</h1>
+
+    <!-- Main container untuk input file dan kanvas -->
+    <div class="main-container">
+      <p>Pilih Gambar Dari Perangkat Anda :</p>
+      <input type="file" id="fileInput" accept="image/*" />
+      <img id="gambar" alt="Gambar tidak tersedia" style="display: none" />
+      <canvas id="kanvas" width="220" height="277"
+        >your browser does not support the HTML5 canvas tag.</canvas
+      >
+      <button onclick="kanvas()">Try</button>
+    </div>
+    </body>
+     <script>
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", function (event) {
+          var file = event.target.files[0];
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var img = document.getElementById("gambar");
+            img.src = e.target.result;
+            img.style.display = "block";
+          };
+          if (file) {
+            reader.readAsDataURL(file);
+          }
+        });
+
+      function kanvas() {
+        var c = document.getElementById("kanvas");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("gambar");
+        ctx.drawImage(img, 0, 0, c.width, c.height);
+      }
+    </script>
+      </body>
+</html>
+
+        </textarea
+          >
+          <button class="run-button" onclick="runContentCode()">Run</button>
+          <button class="undo-button" onclick="undoContentCode()">Undo</button>
+
+          <h3>Hasil:</h3>
+          <div class="preview" id="previewContent"></div>
+        </div>
+
+        <!-- SECTION PENUTUP DARI ATAS  -->
+      </section>
+    </main>
 
     <script>
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", function (event) {
+          var file = event.target.files[0];
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var img = document.getElementById("gambar");
+            img.src = e.target.result;
+            img.style.display = "block";
+          };
+          if (file) {
+            reader.readAsDataURL(file);
+          }
+        });
+
       function kanvas() {
-        // mendapatkan elemen canvas
         var c = document.getElementById("kanvas");
-
-        // mendapatkan konteks 2D dari canvas, diperlukan untuk menggambar
         var ctx = c.getContext("2d");
-
-        // mendapatkan elemen gambar berdasarkan ID-nya
         var img = document.getElementById("gambar");
-
-        // Menggambar gambar ke dalam canvas pada titik koordinat (10,10) sebelum di gantikan 0, 0, c.width, c.height
         ctx.drawImage(img, 0, 0, c.width, c.height);
       }
     </script>
