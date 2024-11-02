@@ -2,7 +2,7 @@
 :root {
   --warna-1: rgb(43, 78, 175);
   --warna-2: white;
-  --warna-3: #43444a;
+  --warna-3: #0f1035;
   --warna-4: #393e46;
   --warna-5: #00adb5;
 
@@ -14,7 +14,7 @@
 }
 
 .tutorial-section {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 100px auto;
   padding: 20px;
   background-color: var(--warna-3);
