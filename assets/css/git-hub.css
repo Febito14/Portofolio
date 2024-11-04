@@ -14,8 +14,8 @@
 }
 
 .tutorial-section {
-  max-width: 1200px;
-  margin: 100px auto;
+  max-width: 900px;
+  margin: 50px auto;
   padding: 20px;
   background-color: var(--warna-3);
   border-radius: 8px;
@@ -35,15 +35,17 @@
 .step img {
   display: block;
   margin: 10px auto;
-  max-width: 100%;
+  max-width: 80%;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
 .step h2 {
   font-size: 1.2em;
+  margin: 10px auto;
 }
 
 .step p {
   font-size: 1em;
+  margin: 10px auto;
 }

@@ -26,26 +26,30 @@
       /* Style untuk tabel */
       table {
         width: 100%;
-        border-collapse: collapse; /* Menggabungkan border antara sel*/
+        max-width: 100%;
+        border-collapse: collapse; /* Menggabungkan border antara sel */
       }
-      th {
-        border: 1px solid rgb(236, 236, 236); /* Menambahkan border pada setiap sel*/
+
+      th,
+      td {
         padding: 8px;
-        text-align: center; /* Menyelarasakn teks ke kiri*/
+        text-align: center;
+      }
+
+      th {
+        border: 1px solid rgb(236, 236, 236); /* Menambahkan border pada setiap sel */
+        background-color: #365486; /* Memberi warna latar pada header tabel */
         color: white;
       }
+
       td {
         color: black;
         border: 1px solid rgb(0, 0, 0);
-        text-align: center;
       }
-      th {
-        background-color: #365486; /* Memberi warna latar pada header tabel*/
-      }
-      code{
+      code {
         color: #689fff;
       }
-        /* Style for tutorial box */
+      /* Style for tutorial box */
       .tutorial-container {
         display: flex;
         flex-wrap: wrap;
@@ -66,8 +70,8 @@
         transition: transform 0.3s ease; /* Transition for hover effect */
         box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371); /* Add shadow */
       }
-        /* Styling untuk kotak biru yang berisi syntax */
-         .page-wrapper {
+      /* Styling untuk kotak biru yang berisi syntax */
+      .page-wrapper {
         max-width: 800px; /* Maksimal lebar halaman */
         margin: 0 auto; /* Memusatkan elemen */
         display: flex;
@@ -89,41 +93,56 @@
         padding: 15px;
         border-radius: 10px;
         width: 90%;
-         box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371); 
+        box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371);
       }
       .tutorial-box:hover {
         transform: scale(1.05); /* Hover effect: slightly enlarge */
       }
 
       /* Desain responsif untuk layar kecil */
-@media (max-width: 768px) {
-  .tutorial-container {
-    justify-content: center; /* Center content on small screens */
-    margin: 10px 20px; /* Adjust margin for smaller screens */
-  }
+      @media (max-width: 768px) {
+        .tutorial-container {
+          justify-content: center; /* Center content on small screens */
+          margin: 10px 20px; /* Adjust margin for smaller screens */
+        }
 
-  .tutorial-box {
-    width: 100%; /* Full width for small screens */
-    margin-bottom: 20px;
-  }
-}
+        .tutorial-box {
+          width: 100%; /* Full width for small screens */
+          margin-bottom: 20px;
+        }
+        th,
+        td {
+          padding: 6px;
+          font-size: 14px;
+        }
+      }
 
-/* Desain responsif untuk layar lebih kecil (misalnya, ponsel) */
-@media (max-width: 480px) {
-  .tutorial-container {
-    padding: 10px; /* Reduce padding for smaller screens */
-    margin: 5px 10px; /* Reduce margin for very small screens */
-  }
+      /* Desain responsif untuk layar lebih kecil (misalnya, ponsel) */
+      @media (max-width: 480px) {
+        .tutorial-container {
+          padding: 10px; /* Reduce padding for smaller screens */
+          margin: 5px 10px; /* Reduce margin for very small screens */
+        }
 
-  .tutorial-box {
-    font-size: 16px; /* Adjust font size for better readability */
-    padding: 15px; /* Adjust padding */
-  }
-}
-      
+        .tutorial-box {
+          font-size: 16px; /* Adjust font size for better readability */
+          padding: 15px; /* Adjust padding */
+        }
+        th,
+        td {
+          padding: 4px;
+          font-size: 12px;
+        }
+
+        table {
+          display: block; /* Menjadikan tabel block untuk scroll */
+          overflow-x: auto; /* Mengaktifkan scroll horizontal jika tabel terlalu lebar */
+          width: 100%;
+        }
+      }
     </style>
   </head>
-  <br>
+  <body>
     <div class="container">
       <!-- --------------- HEADER --------------- -->
       <nav id="header">
@@ -134,7 +153,7 @@
         <div class="nav-menu" id="myNavMenu">
           <ul class="nav_menu_list">
             <li class="nav_list">
-              <a href="index.html" class="nav-link active-link">Home</a>
+              <a href="index.html" class="nav-link ">Home</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
@@ -146,7 +165,7 @@
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <a href="tutorial.html" class="nav-link active-link">Tutorial</a>
               <div class="circle"></div>
             </li>
             <!-- <li class="nav_list">
@@ -177,39 +196,61 @@
       </nav>
     </div>
     <!-- Disini saya kasih BR untuk menurunkan text -->
-  <br>
-  </br>
-  <br>
-  </br>
+    <br />
+    <br />
+    <br />
+    <br />
 
-
- <!-- Tutorial Section -->
+    <!-- Tutorial Section -->
     <h1 style="text-align: center">HTML Elements membuat tabel</h1>
-    <h3 style="text-align: center;"> Berikut ini adalah beberapa element HTML yang digunakan didalam membuat tabel</h3>
+    <h3 style="text-align: center">
+      Berikut ini adalah beberapa element HTML yang digunakan didalam membuat
+      tabel
+    </h3>
     <div class="tutorial-container">
       <div class="tutorial-box">
-        <p><code>&lt;table&gt;</code> - Elemen utama untuk membuat sebuah tabel di HTML. Semua baris dan kolom tabel ditempatkan di dalam elemen ini.</p>
+        <p>
+          <code>&lt;table&gt;</code> - Elemen utama untuk membuat sebuah tabel
+          di HTML. Semua baris dan kolom tabel ditempatkan di dalam elemen ini.
+        </p>
       </div>
       <div class="tutorial-box">
-        <p><code>&lt;thead&gt;</code> - Elemen ini digunakan untuk mendefinisikan bagian kepala atau header dari tabel. Biasanya berisi judul kolom yang diletakkan di bagian atas tabel.</p>
+        <p>
+          <code>&lt;thead&gt;</code> - Elemen ini digunakan untuk mendefinisikan
+          bagian kepala atau header dari tabel. Biasanya berisi judul kolom yang
+          diletakkan di bagian atas tabel.
+        </p>
       </div>
       <div class="tutorial-box">
-        <p><code>&lt;tbody&gt;</code> - Elemen ini digunakan untuk menampung isi tabel atau konten utama. Data yang ada di dalam tabel ditempatkan di dalam elemen (tbody).</p>
+        <p>
+          <code>&lt;tbody&gt;</code> - Elemen ini digunakan untuk menampung isi
+          tabel atau konten utama. Data yang ada di dalam tabel ditempatkan di
+          dalam elemen (tbody).
+        </p>
       </div>
       <div class="tutorial-box">
-        <p><code>&lt;th&gt;</code> - Elemen ini digunakan untuk membuat header (judul) di kolom tabel. Teks yang diletakkan di dalam elemen (th) secara default ditampilkan dengan teks tebal dan di tengah-tengah sel.</p>
+        <p>
+          <code>&lt;th&gt;</code> - Elemen ini digunakan untuk membuat header
+          (judul) di kolom tabel. Teks yang diletakkan di dalam elemen (th)
+          secara default ditampilkan dengan teks tebal dan di tengah-tengah sel.
+        </p>
       </div>
       <div class="tutorial-box">
-        <p><code>&lt;tr&gt;</code> - Digunakan untuk mendefinisikan satu baris dalam tabel. Setiap baris di dalam tabel ditempatkan di dalam elemen tr.</p>
+        <p>
+          <code>&lt;tr&gt;</code> - Digunakan untuk mendefinisikan satu baris
+          dalam tabel. Setiap baris di dalam tabel ditempatkan di dalam elemen
+          tr.
+        </p>
       </div>
-       <div class="tutorial-box">
-        <p><code>&lt;td&gt;</code> - Elemen ini digunakan untuk mendefinisikan satu sel data di dalam tabel. Setiap data dalam tabel ditempatkan di dalam elemen (td). Ini adalah elemen yang berisi konten data pada setiap baris tabel.</p>
+      <div class="tutorial-box">
+        <p>
+          <code>&lt;td&gt;</code> - Elemen ini digunakan untuk mendefinisikan
+          satu sel data di dalam tabel. Setiap data dalam tabel ditempatkan di
+          dalam elemen (td). Ini adalah elemen yang berisi konten data pada
+          setiap baris tabel.
+        </p>
       </div>
     </div>
-
-
-    <br>
-  </br>
 
     <h1 style="text-align: center">Data IPK Mahasiswa</h1>
     <h3 style="text-align: center">Universitas Teknologi Yogyakarta 2024</h3>
@@ -272,7 +313,7 @@
           <!-- Sel ini berisi fakultas mahasiswa 'Fakultas Teknologi Informasi' -->
         </tr>
         <!-- Akhir dari satu baris data tabel -->
-          <tr>
+        <tr>
           <!-- <tr> digunakan untuk menandai satu baris dalam tabel -->
           <td>5220211003</td>
           <!-- <td> digunakan untuk membuat satu sel dalam baris tabel. Sel ini berisi NIM (Nomor Induk Mahasiswa) '5220311003' -->
@@ -319,96 +360,96 @@
     </table>
 
     <!-- INI ADALAH SYNTAX UNTUK DATA MAHASISWA -->
-<div class="page-wrapper">
-  <!-- Syntax untuk data mahasiswa -->
-  <div class="syntax-container">
-    <h1 style="text-align: center">Syntax Tabel Data IPK Mahasiswa</h1>
-    <div class="syntax-box">
-      <code>
-        &lt;h1 style="text-align: center"&gt;Data Mahasiswa&lt;/h1&gt;<br />
-        &lt;h3 style="text-align: center"&gt;Universitas Teknologi Yogyakarta 2024&lt;/h3&gt;<br />
-        &lt;table&gt;
-      </code>
-      <code>
-        &lt;thead&gt;<br />
-        &lt;tr&gt;<br />
-        &lt;th&gt;NIM&lt;/th&gt;<br />
-        &lt;!-- Baris pertama untuk kolom "NIM Mahasiswa" --&gt;
-      </code>
-      <code>
-        &lt;th&gt;Nama&lt;/th&gt;<br />
-        &lt;!-- Baris kedua untuk kolom "Nama Mahasiswa" --&gt;
-        &lt;th&gt;IPK Sem 1&lt;/th&gt;<br />
-        &lt;th&gt;IPK Sem 2&lt;/th&gt;<br />
-        &lt;th&gt;IPK Sem 3&lt;/th&gt;<br />
-        &lt;th&gt;IPK Sem 4&lt;/th&gt;<br />
-        &lt;th&gt;IPK Sem 5&lt;/th&gt;<br />
-        &lt;th&gt;IPK Sem 6&lt;/th&gt;<br />
-        &lt;th&gt;IPK Sem 7&lt;/th&gt;<br />
-        &lt;th&gt;IPK Sem 8&lt;/th&gt;<br />
-        &lt;th&gt;Jurusan&lt;/th&gt;<br />
-        &lt;th&gt;Fakultas&lt;/th&gt;<br />
-      </code>
-      <code>
-        &lt;/tr&gt;<br />
-        &lt;/thead&gt;<br />
-        &lt;tbody&gt;<br />
-        &lt;!-- Data Mahasiswa dimulai dari sini --&gt;
-      </code>
-      <code>
-        &lt;tr&gt;<br />
-        &lt;td&gt;5220311003&lt;/td&gt;<br />
-        &lt;td&gt;Febito Tegar T.F&lt;/td&gt;<br />
-        &lt;td&gt;3.85&lt;/td&gt;<br />
-        &lt;td&gt;3.90&lt;/td&gt;<br />
-        &lt;td&gt;4.00&lt;/td&gt;<br />
-        &lt;td&gt;4.00&lt;/td&gt;<br />
-        &lt;td&gt;3.85&lt;/td&gt;<br />
-        &lt;td&gt;3.77&lt;/td&gt;<br />
-        &lt;td&gt;3.90&lt;/td&gt;<br />
-        &lt;td&gt;4.00&lt;/td&gt;<br />
-        &lt;td&gt;Sistem Informasi&lt;/td&gt;<br />
-        &lt;td&gt;Fakultas Sains & Teknologi&lt;/td&gt;<br />
-        &lt;/tr&gt;
-      </code>
-      <code>
-        &lt;tr&gt;<br />
-        &lt;td&gt;5220211003&lt;/td&gt;<br />
-        &lt;td&gt;Oliver&lt;/td&gt;<br />
-        &lt;td&gt;3.70&lt;/td&gt;<br />
-        &lt;td&gt;3.80&lt;/td&gt;<br />
-        &lt;td&gt;4.00&lt;/td&gt;<br />
-        &lt;td&gt;4.00&lt;/td&gt;<br />
-        &lt;td&gt;3.77&lt;/td&gt;<br />
-        &lt;td&gt;3.80&lt;/td&gt;<br />
-        &lt;td&gt;3.85&lt;/td&gt;<br />
-        &lt;td&gt;4.00&lt;/td&gt;<br />
-        &lt;td&gt;Teknik Informatika&lt;/td&gt;<br />
-        &lt;td&gt;Fakultas Sains & Teknologi&lt;/td&gt;<br />
-        &lt;/tr&gt;
-      </code>
-      <code>
-        &lt;tr&gt;<br />
-        &lt;td&gt;5220411003&lt;/td&gt;<br />
-        &lt;td&gt;Code X&lt;/td&gt;<br />
-        &lt;td&gt;3.90&lt;/td&gt;<br />
-        &lt;td&gt;3.85&lt;/td&gt;<br />
-        &lt;td&gt;4.00&lt;/td&gt;<br />
-        &lt;td&gt;4.00&lt;/td&gt;<br />
-        &lt;td&gt;3.85&lt;/td&gt;<br />
-        &lt;td&gt;3.80&lt;/td&gt;<br />
-        &lt;td&gt;3.77&lt;/td&gt;<br />
-        &lt;td&gt;4.00&lt;/td&gt;<br />
-        &lt;td&gt;Teknologi Informasi&lt;/td&gt;<br />
-        &lt;td&gt;Fakultas Sains & Teknologi&lt;/td&gt;<br />
-        &lt;/tr&gt;
-      </code>
+    <div class="page-wrapper">
+      <!-- Syntax untuk data mahasiswa -->
+      <div class="syntax-container">
+        <h1 style="text-align: center">Syntax Tabel Data IPK Mahasiswa</h1>
+        <div class="syntax-box">
+          <code>
+            &lt;h1 style="text-align: center"&gt;Data Mahasiswa&lt;/h1&gt;<br />
+            &lt;h3 style="text-align: center"&gt;Universitas Teknologi
+            Yogyakarta 2024&lt;/h3&gt;<br />
+            &lt;table&gt;
+          </code>
+          <code>
+            &lt;thead&gt;<br />
+            &lt;tr&gt;<br />
+            &lt;th&gt;NIM&lt;/th&gt;<br />
+            &lt;!-- Baris pertama untuk kolom "NIM Mahasiswa" --&gt;
+          </code>
+          <code>
+            &lt;th&gt;Nama&lt;/th&gt;<br />
+            &lt;!-- Baris kedua untuk kolom "Nama Mahasiswa" --&gt;
+            &lt;th&gt;IPK Sem 1&lt;/th&gt;<br />
+            &lt;th&gt;IPK Sem 2&lt;/th&gt;<br />
+            &lt;th&gt;IPK Sem 3&lt;/th&gt;<br />
+            &lt;th&gt;IPK Sem 4&lt;/th&gt;<br />
+            &lt;th&gt;IPK Sem 5&lt;/th&gt;<br />
+            &lt;th&gt;IPK Sem 6&lt;/th&gt;<br />
+            &lt;th&gt;IPK Sem 7&lt;/th&gt;<br />
+            &lt;th&gt;IPK Sem 8&lt;/th&gt;<br />
+            &lt;th&gt;Jurusan&lt;/th&gt;<br />
+            &lt;th&gt;Fakultas&lt;/th&gt;<br />
+          </code>
+          <code>
+            &lt;/tr&gt;<br />
+            &lt;/thead&gt;<br />
+            &lt;tbody&gt;<br />
+            &lt;!-- Data Mahasiswa dimulai dari sini --&gt;
+          </code>
+          <code>
+            &lt;tr&gt;<br />
+            &lt;td&gt;5220311003&lt;/td&gt;<br />
+            &lt;td&gt;Febito Tegar T.F&lt;/td&gt;<br />
+            &lt;td&gt;3.85&lt;/td&gt;<br />
+            &lt;td&gt;3.90&lt;/td&gt;<br />
+            &lt;td&gt;4.00&lt;/td&gt;<br />
+            &lt;td&gt;4.00&lt;/td&gt;<br />
+            &lt;td&gt;3.85&lt;/td&gt;<br />
+            &lt;td&gt;3.77&lt;/td&gt;<br />
+            &lt;td&gt;3.90&lt;/td&gt;<br />
+            &lt;td&gt;4.00&lt;/td&gt;<br />
+            &lt;td&gt;Sistem Informasi&lt;/td&gt;<br />
+            &lt;td&gt;Fakultas Sains & Teknologi&lt;/td&gt;<br />
+            &lt;/tr&gt;
+          </code>
+          <code>
+            &lt;tr&gt;<br />
+            &lt;td&gt;5220211003&lt;/td&gt;<br />
+            &lt;td&gt;Oliver&lt;/td&gt;<br />
+            &lt;td&gt;3.70&lt;/td&gt;<br />
+            &lt;td&gt;3.80&lt;/td&gt;<br />
+            &lt;td&gt;4.00&lt;/td&gt;<br />
+            &lt;td&gt;4.00&lt;/td&gt;<br />
+            &lt;td&gt;3.77&lt;/td&gt;<br />
+            &lt;td&gt;3.80&lt;/td&gt;<br />
+            &lt;td&gt;3.85&lt;/td&gt;<br />
+            &lt;td&gt;4.00&lt;/td&gt;<br />
+            &lt;td&gt;Teknik Informatika&lt;/td&gt;<br />
+            &lt;td&gt;Fakultas Sains & Teknologi&lt;/td&gt;<br />
+            &lt;/tr&gt;
+          </code>
+          <code>
+            &lt;tr&gt;<br />
+            &lt;td&gt;5220411003&lt;/td&gt;<br />
+            &lt;td&gt;Code X&lt;/td&gt;<br />
+            &lt;td&gt;3.90&lt;/td&gt;<br />
+            &lt;td&gt;3.85&lt;/td&gt;<br />
+            &lt;td&gt;4.00&lt;/td&gt;<br />
+            &lt;td&gt;4.00&lt;/td&gt;<br />
+            &lt;td&gt;3.85&lt;/td&gt;<br />
+            &lt;td&gt;3.80&lt;/td&gt;<br />
+            &lt;td&gt;3.77&lt;/td&gt;<br />
+            &lt;td&gt;4.00&lt;/td&gt;<br />
+            &lt;td&gt;Teknologi Informasi&lt;/td&gt;<br />
+            &lt;td&gt;Fakultas Sains & Teknologi&lt;/td&gt;<br />
+            &lt;/tr&gt;
+          </code>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-
-     <!-- TABELLLLLLLLLLLLL -->
+    <!-- TABELLLLLLLLLLLLL -->
     <h1 style="text-align: center">Tutorial Membuat Tabel</h1>
     <h3 style="text-align: center">
       Berikut ini adalah latihan untuk tabel Pertemuan 4
@@ -452,9 +493,8 @@
         </tr>
       </tbody>
     </table>
-
-    <br>
-    </br>
+    <br />
+    <br />
 
     <!-- ----- TYPING JS Link ----- -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>

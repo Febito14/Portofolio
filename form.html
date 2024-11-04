@@ -3,7 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register Form</title>
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <!--Untuk bagian ikon ikon--!>
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <title>Tutorial Register Form</title>
     <style>
       /* Styling untuk elemen body */
       body {
@@ -28,7 +45,7 @@
         background-color: white; /* Latar belakang putih untuk form */
         padding: 20px;
         border-radius: 8px; /* Membuat sudut form tumpul */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan di sekitar form */
+        box-shadow: 0 0 10px rgba(15, 49, 124, 0.538); /* Efek bayangan di sekitar form */
       }
 
       /* Mengatur heading dan paragraph di dalam container register */
@@ -86,7 +103,7 @@
         padding: 20px;
         background-color: white;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+        box-shadow: 0 0 10px rgba(15, 49, 124, 0.538); /* Efek bayangan */
       }
 
       /* Styling untuk box tutorial */
@@ -97,7 +114,7 @@
         font-size: 16px;
         border-radius: 10px;
         transition: transform 0.3s ease;
-        box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371); /* Efek bayangan pada box */
+        box-shadow: 0 0 10px rgba(15, 49, 124, 0.538); /* Efek bayangan pada box */
       }
 
       /* Efek hover pada box tutorial */
@@ -117,8 +134,8 @@
         color: #1e3a61;
         padding: 15px;
         border-radius: 10px;
-        width: 45%;
-        box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371);
+        width: 90%;
+        box-shadow: 0 0 10px rgba(15, 49, 124, 0.538);
       }
 
       /* Responsif untuk layar kecil */
@@ -146,6 +163,65 @@
     </style>
   </head>
   <body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Mr.Febito</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html" class="nav-link ">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="index.html" class="nav-link">About</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="index.html" class="nav-link">Projects</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link active-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <!-- <li class="nav_list">
+              <a href="form.html" class="nav-link">Cara membuat Form</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tabel.html" class="nav-link">Cara membuat Tabel</a>
+              <div class="circle"></div>
+            </li> -->
+            <li class="nav_list">
+              <a href="index.html" class="nav-link">Contact</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <button
+            class="btn"
+            onclick="window.location.href='https://drive.google.com/file/d/1x5ZZni9XuaNirR0-o5m0bfVL_5Kh2gRs/view?usp=sharing'"
+          >
+            Download CV <i class="uil uil-file-alt"></i>
+          </button>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+    </div>
+    <!-- Disini saya kasih BR untuk menurunkan text -->
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- Bagian Tutorial Form -->
     <div class="page-wrapper">
       <!-- Register Container -->
       <h1 style="text-align: center">Tutorial Form Register</h1>
@@ -292,5 +368,13 @@
           "login.html"; /* Mengarahkan pengguna ke login.html */
       }
     </script>
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

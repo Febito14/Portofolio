@@ -23,7 +23,7 @@
     <title>Tutorial CSS</title>
   </head>
   <body>
-    <div class="container">
+   <div class="container">
       <!-- --------------- HEADER --------------- -->
       <nav id="header">
         <div class="nav-logo">
@@ -33,35 +33,51 @@
         <div class="nav-menu" id="myNavMenu">
           <ul class="nav_menu_list">
             <li class="nav_list">
-              <a href="index.html" class="nav-link active-link">Home</a>
+              <a href="index.html" class="nav-link ">Home</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="table.html" class="nav-link">Tabel</a>
+              <a href="index.html" class="nav-link">About</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="form.html" class="nav-link">Form</a>
+              <a href="index.html" class="nav-link">Projects</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <a href="tutorial.html" class="nav-link active-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <!-- <li class="nav_list">
+              <a href="form.html" class="nav-link">Cara membuat Form</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="#contact" class="nav-link">Contact</a>
+              <a href="tabel.html" class="nav-link">Cara membuat Tabel</a>
+              <div class="circle"></div>
+            </li> -->
+            <li class="nav_list">
+              <a href="index.html" class="nav-link">Contact</a>
               <div class="circle"></div>
             </li>
           </ul>
         </div>
         <div class="nav-button">
-          <button class="btn">
+          <button
+            class="btn"
+            onclick="window.location.href='https://drive.google.com/file/d/1x5ZZni9XuaNirR0-o5m0bfVL_5Kh2gRs/view?usp=sharing'"
+          >
             Download CV <i class="uil uil-file-alt"></i>
           </button>
         </div>
         <div class="nav-menu-btn">
           <i class="uil uil-bars" onclick="myMenuFunction()"></i>
         </div>
+      </nav>
+    </div>
+    <!-- Disini saya kasih BR untuk menurunkan text -->
+    <br />
+    <br />
       </nav>
 
       <!-- -------------- MAIN ---------------- -->
@@ -676,5 +692,13 @@
         }
       }
     </script>
+        <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
