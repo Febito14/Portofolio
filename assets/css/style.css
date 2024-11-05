@@ -4,16 +4,16 @@
 /* ----- VARIABLES ----- */
 :root {
   /* Background and Primary Colors */
-  --body-color: #eef1ef; /* Hitam abu-abu pekat untuk latar belakang, memberikan kesan elegan dan profesional */
-  --color-white: #d7d7d7; /* Putih keabu-abuan yang lembut untuk mengurangi kontras yang terlalu tajam */
+  --body-color: #f6f6f6; /* Hitam abu-abu pekat untuk latar belakang, memberikan kesan elegan dan profesional */
+  --color-white: #e8e8e8; /* Putih keabu-abuan yang lembut untuk mengurangi kontras yang terlalu tajam */
 
   /* Text Colors */
   --text-color-second: #0f1035; /* Abu-abu terang untuk teks sekunder, jelas namun tetap elegan */
-  --text-color-third: #3b3b3b; /* Biru tegas untuk heading atau elemen penting, memberikan kesan formal dan berwibawa */
+  --text-color-third: #2b2f58; /* Biru tegas untuk heading atau elemen penting, memberikan kesan formal dan berwibawa */
 
   /* Primary Button & Link Colors */
   --first-color: #365486; /* Ungu tua tegas, memberikan kesan yang profesional namun modern */
-  --first-color-hover: #0f1035; /* Ungu lebih tua untuk efek hover, memperkuat kesan tegas pada interaksi */
+  --first-color-hover: #0e0f42; /* Ungu lebih tua untuk efek hover, memperkuat kesan tegas pada interaksi */
 
   /* Accent Colors */
   --second-color: #365486; /* Biru kehijauan tegas untuk elemen sekunder, menghadirkan kesan segar namun tetap formal */
@@ -74,7 +74,7 @@ html {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.4s;
-  color: #eef1ef;
+  color: #ffffff;
 }
 .btn > i {
   margin-left: 10px;
@@ -91,7 +91,7 @@ i {
 
 /* ------- BASE -------- */
 body {
-  background: var(--body-color);
+  background: var(--color-white);
 }
 .container {
   width: 100%;
@@ -110,7 +110,7 @@ nav {
   padding-inline: 9vw;
   transition: 0.3s;
   z-index: 100;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 .nav-logo {
   position: relative;
@@ -225,7 +225,7 @@ nav {
 }
 .social_icons {
   display: flex;
-  margin-top: 5em;
+  margin-top: 2em;
   gap: 30px;
 }
 .icon {
@@ -393,12 +393,13 @@ h3 {
   height: 250px;
   background: var(--color-white);
   border-radius: 20px;
-  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  box-shadow: 1px 2px 10px 2px var(--first-shadow-color);
   overflow: hidden;
+  margin-bottom: 1rem;
 }
 .project-box > i {
   font-size: 50px;
-  color: #16195b;
+  color: #0e0f42; 
   margin-bottom: 25px;
   transition: color 0.4s ease;
   z-index: 2;

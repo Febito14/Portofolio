@@ -11,6 +11,7 @@
 
     <!-- --------- CSS ---------- -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- --------- FAVICON ---------- -->
     <link
@@ -87,11 +88,11 @@
         margin-top: 10px; /* Jarak antara form login dan tutorial */
         background-color: white;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+        box-shadow: 0 0 10px rgba(27, 20, 95, 0.71); /* Efek bayangan */
       }
 
       /* Styling untuk kotak tutorial */
-      .canvas-box {
+      .tutorial-box {
         padding: 20px;
         background-color: #365486; /* Warna latar belakang biru */
         color: #e5e5e5; /* Warna teks terang */
@@ -102,12 +103,12 @@
       }
 
       /* Efek hover pada kotak tutorial */
-      .canvas-box:hover {
+     .tutorial-box:hover {
         transform: scale(1.02); /* Zoom sedikit saat di-hover */
       }
 
       /* Teks pada kotak tutorial */
-      .canvas-box p {
+     .tutorial-box p {
         margin: 0;
         text-align: left; /* Teks rata kiri */
       }
@@ -128,19 +129,19 @@
         background-color: #ffffff;
         color: #1e3a61;
         border-radius: 10px;
-        box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371);
+        box-shadow: 0 9px 10px rgba(35, 67, 109, 0.812);
       }
 
       .syntax-box {
-        background-color: #e1e1fb;
-        color: #333;
+        background-color: #1e3a61;
+        color: #ffffff;
         padding: 15px;
         border-radius: 8px;
         font-size: 14px;
         overflow-x: auto; /* Tambahkan scroll horizontal untuk konten yang panjang */
         white-space: pre-wrap; /* Bungkus teks panjang pada layar kecil */
         word-wrap: break-word; /* Putus kata panjang jika diperlukan */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(12, 23, 85, 0.703);
       }
       
 
@@ -174,37 +175,37 @@
       <!-- --------------- HEADER --------------- -->
       <nav id="header">
         <div class="nav-logo">
-          <p class="nav-name">Mr.Febito</p>
+          <p class="nav-name">Kanvas</p>
           <span>.</span>
         </div>
-        <div class="nav-menu" id="myNavMenu">
+           <div class="nav-menu" id="myNavMenu">
           <ul class="nav_menu_list">
             <li class="nav_list">
               <a href="index.html" class="nav-link">Home</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="index.html" class="nav-link">About</a>
+              <a href="form.html" class="nav-link ">Form</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="index.html" class="nav-link ">Projects</a>
+              <a href="loc.html" class="nav-link">API</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="tutorial.html" class="nav-link active-link">Tutorial</a>
+              <a href="tabel.html" class="nav-link">Tabel</a>
               <div class="circle"></div>
             </li>
-            <!-- <li class="nav_list">
-              <a href="form.html" class="nav-link">Cara membuat Form</a>
+             <li class="nav_list">
+              <a href="conectgithub.html" class="nav-link">Deploy</a>
               <div class="circle"></div>
             </li>
-            <li class="nav_list">
-              <a href="tabel.html" class="nav-link">Cara membuat Tabel</a>
+             <li class="nav_list">
+              <a href="P6.html" class="nav-link">CSS</a>
               <div class="circle"></div>
-            </li> -->
-            <li class="nav_list">
-              <a href="index.html" class="nav-link">Contact</a>
+            </li>
+             <li class="nav_list">
+              <a href="kanvas.html" class="nav-link">Kanvas</a>
               <div class="circle"></div>
             </li>
           </ul>
@@ -253,27 +254,27 @@
       kanvas
     </h3>
     <div class="tutorial-container">
-      <div class="canvas-box">
+      <div class="tutorial-box">
         <p>
           <code>&lt;canvas&gt;</code> - Elemen untuk membuat area gambar atau
           grafis di halaman HTML menggunakan JavaScript.
         </p>
       </div>
-      <div class="canvas-box">
+      <div class="tutorial-box">
         <p>
           <code>&lt;img&gt;</code> - Elemen untuk menampilkan gambar di halaman
           HTML. Gambar ini dapat digunakan sebagai sumber untuk digambar di
           kanvas.
         </p>
       </div>
-      <div class="canvas-box">
+      <div class="tutorial-box">
         <p>
           <code>&lt;button&gt;</code> - Elemen untuk membuat tombol yang dapat
           diklik. Dalam kasus ini, tombol digunakan untuk menjalankan fungsi
           yang menggambar gambar di kanvas.
         </p>
       </div>
-      <div class="canvas-box">
+      <div class="tutorial-box">
         <p>
           <code>&lt;input type="file"&gt;</code> - Elemen input yang
           memungkinkan pengguna memilih file dari perangkat mereka, seperti
@@ -312,6 +313,162 @@
         </code>
       </div>
     </div>
+
+    <!-- -------------- MAIN ---------------- -->
+      <main class="wrapper">
+        <section class="section" id="tutorials">
+          <div class="top-header">
+            <h1>Tutorial membuat Kanvas</h1>
+          </div>
+          <!-- Card Style untuk Latihan Page Margin -->
+          <div class="coba-tutorial">
+            <h2>1. Latihan membuat Kanvas</h2>
+            <p>
+              Latihan untuk membuat kanvas
+            <h3>HTML & CSS Code:</h3>
+            <textarea
+              class="editor"
+              rows="20"
+              id="contentCode"
+              placeholder="Masukkan kode HTML dan CSS di sini"
+            >
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <!--Untuk bagian ikon ikon--!>
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+   <link rel="stylesheet" href="style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <title>Tutorial Kanvas</title>
+    <style>
+      /* Style untuk body */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+      }
+
+      /* Style untuk judul halaman */
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      h3 {
+        color: #555;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /* Container utama untuk input dan kanvas */
+      .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 600px;
+      }
+
+      /* Style untuk gambar dan canvas */
+      #gambar,
+      #kanvas {
+        width: 300px;
+        height: 350px;
+        border: 1px solid #ccc;
+      }
+
+      /* Style untuk tombol */
+      button {
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: normal;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <h1>Tutorial Kanvas</h1>
+
+    <!-- Main container untuk input file dan kanvas -->
+    <div class="main-container">
+      <p>Pilih Gambar Dari Perangkat Anda :</p>
+      <input type="file" id="fileInput" accept="image/*" />
+      <img id="gambar" alt="Gambar tidak tersedia" style="display: none" />
+      <canvas id="kanvas" width="220" height="277"
+        >your browser does not support the HTML5 canvas tag.</canvas
+      >
+      <button onclick="kanvas()">Try</button>
+    </div>
+    <script>
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", function (event) {
+          var file = event.target.files[0];
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var img = document.getElementById("gambar");
+            img.src = e.target.result;
+            img.style.display = "block";
+          };
+          if (file) {
+            reader.readAsDataURL(file);
+          }
+        });
+
+      function kanvas() {
+        var c = document.getElementById("kanvas");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("gambar");
+        ctx.drawImage(img, 0, 0, c.width, c.height);
+      }
+    </script>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+        </textarea
+            >
+            <button class="run-button" onclick="runContentCode()">Run</button>
+            <button class="undo-button" onclick="undoContentCode()">
+              Undo
+            </button>
+
+            <h3>Hasil:</h3>
+            <div class="preview" id="previewContent"></div>
+          </div>
 
     <script>
       document

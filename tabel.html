@@ -12,6 +12,7 @@
 
     <!-- --------- CSS ---------- -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- --------- FAVICON ---------- -->
     <link
@@ -145,39 +146,40 @@
   <body>
     <div class="container">
       <!-- --------------- HEADER --------------- -->
+          <!-- --------------- HEADER --------------- -->
       <nav id="header">
         <div class="nav-logo">
-          <p class="nav-name">Mr.Febito</p>
+          <p class="nav-name">Tabel</p>
           <span>.</span>
         </div>
-        <div class="nav-menu" id="myNavMenu">
+           <div class="nav-menu" id="myNavMenu">
           <ul class="nav_menu_list">
             <li class="nav_list">
-              <a href="index.html" class="nav-link ">Home</a>
+              <a href="index.html" class="nav-link">Home</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="index.html" class="nav-link">About</a>
+              <a href="form.html" class="nav-link ">Form</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="index.html" class="nav-link">Projects</a>
+              <a href="loc.html" class="nav-link">API</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="tutorial.html" class="nav-link active-link">Tutorial</a>
+              <a href="tabel.html" class="nav-link">Tabel</a>
               <div class="circle"></div>
             </li>
-            <!-- <li class="nav_list">
-              <a href="form.html" class="nav-link">Cara membuat Form</a>
+             <li class="nav_list">
+              <a href="conectgithub.html" class="nav-link">Deploy</a>
               <div class="circle"></div>
             </li>
-            <li class="nav_list">
-              <a href="tabel.html" class="nav-link">Cara membuat Tabel</a>
+             <li class="nav_list">
+              <a href="P6.html" class="nav-link">CSS</a>
               <div class="circle"></div>
-            </li> -->
-            <li class="nav_list">
-              <a href="index.html" class="nav-link">Contact</a>
+            </li>
+             <li class="nav_list">
+              <a href="kanvas.html" class="nav-link">Kanvas</a>
               <div class="circle"></div>
             </li>
           </ul>
@@ -448,6 +450,297 @@
         </div>
       </div>
     </div>
+
+     <!-- -------------- MAIN ---------------- -->
+      <main class="wrapper">
+        <section class="section" id="tutorials">
+          <div class="top-header">
+            <h1>Tutorial membuat tabel</h1>
+          </div>
+          <!-- Card Style untuk Latihan Page Margin -->
+          <div class="coba-tutorial">
+            <h2>1. Latihan membuat tutorial tabel</h2>
+            <p>
+              Latihan untuk membuat tabel 
+            <h3>HTML & CSS Code:</h3>
+            <textarea
+              class="editor"
+              rows="20"
+              id="contentCode"
+              placeholder="Masukkan kode HTML dan CSS di sini"
+            >
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <!--Untuk bagian ikon ikon--!>
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <title>Tutorial Membuat Tabel</title>
+
+    <style>
+      /* Style untuk tabel */
+      table {
+        width: 100%;
+        max-width: 100%;
+        border-collapse: collapse; /* Menggabungkan border antara sel */
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: center;
+      }
+
+      th {
+        border: 1px solid rgb(236, 236, 236); /* Menambahkan border pada setiap sel */
+        background-color: #365486; /* Memberi warna latar pada header tabel */
+        color: white;
+      }
+
+      td {
+        color: black;
+        border: 1px solid rgb(0, 0, 0);
+      }
+      code {
+        color: #689fff;
+      }
+      /* Style for tutorial box */
+      .tutorial-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 10px 90px;
+        padding: 20px;
+        /* background-color: #0f1035;
+        border-radius: 20px; */
+      }
+      .tutorial-box {
+        width: 30%;
+        padding: 20px;
+        background-color: #365486;
+        color: #e5e5e5;
+        font-size: 18px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease; /* Transition for hover effect */
+        box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371); /* Add shadow */
+      }
+      /* Styling untuk kotak biru yang berisi syntax */
+      .page-wrapper {
+        max-width: 800px; /* Maksimal lebar halaman */
+        margin: 0 auto; /* Memusatkan elemen */
+        display: flex;
+        flex-direction: column;
+        gap: 30px; /* Jarak antar elemen */
+      }
+      .syntax-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .syntax-box {
+        background-color: #ffffff;
+        color: #1e3a61;
+        padding: 15px;
+        border-radius: 10px;
+        width: 90%;
+        box-shadow: 0 9px 10px rgba(61, 101, 153, 0.371);
+      }
+      .tutorial-box:hover {
+        transform: scale(1.05); /* Hover effect: slightly enlarge */
+      }
+
+      /* Desain responsif untuk layar kecil */
+      @media (max-width: 768px) {
+        .tutorial-container {
+          justify-content: center; /* Center content on small screens */
+          margin: 10px 20px; /* Adjust margin for smaller screens */
+        }
+
+        .tutorial-box {
+          width: 100%; /* Full width for small screens */
+          margin-bottom: 20px;
+        }
+        th,
+        td {
+          padding: 6px;
+          font-size: 14px;
+        }
+      }
+
+      /* Desain responsif untuk layar lebih kecil (misalnya, ponsel) */
+      @media (max-width: 480px) {
+        .tutorial-container {
+          padding: 10px; /* Reduce padding for smaller screens */
+          margin: 5px 10px; /* Reduce margin for very small screens */
+        }
+
+        .tutorial-box {
+          font-size: 16px; /* Adjust font size for better readability */
+          padding: 15px; /* Adjust padding */
+        }
+        th,
+        td {
+          padding: 4px;
+          font-size: 12px;
+        }
+
+        table {
+          display: block; /* Menjadikan tabel block untuk scroll */
+          overflow-x: auto; /* Mengaktifkan scroll horizontal jika tabel terlalu lebar */
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+     <h1 style="text-align: center">Data IPK Mahasiswa</h1>
+    <h3 style="text-align: center">Universitas Teknologi Yogyakarta 2024</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>NIM</th>
+          <!-- Baris Pertama untuk kolom "Nim Mahasiwa"-->
+          <th>Nama</th>
+          <!-- Baris kedua untuk kolom "Nama Mahasiwa"-->
+          <th>IPK Sem 1</th>
+          <!-- Baris ketiga untuk IPK smt 1"-->
+          <th>IPK Sem 2</th>
+          <!-- Baris keempat untuk IPK smt 2"-->
+          <th>IPK Sem 3</th>
+          <!-- Baris kelima untuk IPK smt 3"-->
+          <th>IPK Sem 4</th>
+          <!-- Baris keenam untuk IPK smt 4"-->
+          <th>IPK Sem 5</th>
+          <!-- Baris ketujuh untuk IPK smt 5"-->
+          <th>IPK Sem 6</th>
+          <!-- Baris kedelapan untuk IPK smt 6"-->
+          <th>IPK Sem 7</th>
+          <!-- Baris kesembilan untuk IPK smt 7"-->
+          <th>IPK Sem 8</th>
+          <!-- Baris kesepuluh untuk IPK smt 8"-->
+          <th>Jurusan</th>
+          <!-- Baris kesebelas untuk Jurusan"-->
+          <th>Fakultas</th>
+          <!-- Baris keduabelas untuk Fakultas"-->
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Mulai dari bagian <tbody> untuk menampung konten tabel -->
+        <tr>
+          <!-- <tr> digunakan untuk menandai satu baris dalam tabel -->
+          <td>5220311003</td>
+          <!-- <td> digunakan untuk membuat satu sel dalam baris tabel. Sel ini berisi NIM (Nomor Induk Mahasiswa) '5220311003' -->
+          <td>Febito Tegar T.F</td>
+          <!-- Sel ini berisi nama mahasiswa 'Febito Tegar T.F' -->
+          <td>3.85</td>
+          <!-- Sel ini berisi nilai semester 1 -->
+          <td>3.90</td>
+          <!-- Sel ini berisi nilai semester 2 -->
+          <td>4.00</td>
+          <!-- Sel ini berisi nilai semester 3 -->
+          <td>4.00</td>
+          <!-- Sel ini berisi nilai semester 4 -->
+          <td>3.85</td>
+          <!-- Sel ini berisi nilai semester 5 -->
+          <td>3.77</td>
+          <!-- Sel ini berisi nilai semester 6 -->
+          <td>3.90</td>
+          <!-- Sel ini berisi nilai semester 7 -->
+          <td>4.00</td>
+          <!-- Sel ini berisi nilai semester 8 -->
+          <td>Sistem Informasi</td>
+          <!-- Sel ini berisi jurusan mahasiswa 'Teknik Informatika' -->
+          <td>Fakultas Sains & Teknologi</td>
+          <!-- Sel ini berisi fakultas mahasiswa 'Fakultas Teknologi Informasi' -->
+        </tr>
+        <!-- Akhir dari satu baris data tabel -->
+        <tr>
+          <!-- <tr> digunakan untuk menandai satu baris dalam tabel -->
+          <td>5220211003</td>
+          <!-- <td> digunakan untuk membuat satu sel dalam baris tabel. Sel ini berisi NIM (Nomor Induk Mahasiswa) '5220311003' -->
+          <td>Oliver</td>
+          <!-- Sel ini berisi nama mahasiswa 'Oliver' -->
+          <td>3.70</td>
+          <!-- Sel ini berisi nilai semester 1 -->
+          <td>3.80</td>
+          <!-- Sel ini berisi nilai semester 2 -->
+          <td>4.00</td>
+          <!-- Sel ini berisi nilai semester 3 -->
+          <td>4.00</td>
+          <!-- Sel ini berisi nilai semester 4 -->
+          <td>3.77</td>
+          <!-- Sel ini berisi nilai semester 5 -->
+          <td>3.80</td>
+          <!-- Sel ini berisi nilai semester 6 -->
+          <td>3.85</td>
+          <!-- Sel ini berisi nilai semester 7 -->
+          <td>4.00</td>
+          <!-- Sel ini berisi nilai semester 8 -->
+          <td>Teknik Informatika</td>
+          <!-- Sel ini berisi jurusan mahasiswa 'Teknik Informatika' -->
+          <td>Fakultas Sains & Teknologi</td>
+          <!-- Sel ini berisi fakultas mahasiswa 'Fakultas Teknologi Informasi' -->
+        </tr>
+        <tr>
+          <!-- <tr> digunakan untuk menandai satu baris dalam tabel -->
+          <td>5220411003</td>
+          <td>Code X</td>
+          <td>3.90</td>
+          <td>3.85</td>
+          <td>4.00</td>
+          <td>4.00</td>
+          <td>3.85</td>
+          <td>3.80</td>
+          <td>3.77</td>
+          <td>4.00</td>
+          <td>Teknologi Informasi</td>
+          <td>Fakultas Sains & Teknologi</td>
+        </tr>
+        <!-- Anda dapat menambahkan lebih banyak <tr> seperti ini untuk memasukkan data mahasiswa lainnya -->
+      </tbody>
+    </table>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+        </textarea
+            >
+            <button class="run-button" onclick="runContentCode()">Run</button>
+            <button class="undo-button" onclick="undoContentCode()">
+              Undo
+            </button>
+
+            <h3>Hasil:</h3>
+            <div class="preview" id="previewContent"></div>
+          </div>
 
     <!-- TABELLLLLLLLLLLLL -->
     <h1 style="text-align: center">Tutorial Membuat Tabel</h1>

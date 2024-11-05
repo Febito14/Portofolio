@@ -12,6 +12,7 @@
 
     <!-- --------- CSS ---------- -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- --------- FAVICON ---------- -->
     <link
@@ -25,10 +26,11 @@
       /* Styling dasar untuk seluruh halaman */
       body {
         font-family: Arial, sans-serif; /* Menggunakan font Arial */
-        background-color: #eef1ef; /* Warna latar belakang abu terang */
+        background-color: #f4f4f4; /* Warna latar belakang abu terang */
         margin: 0;
         padding: 20px;
         min-height: 100vh; /* Tinggi minimum halaman setara dengan 100% layar */
+         padding-top: 0px;
       }
 
       /* Wrapper utama untuk mengatur konten secara terpusat */
@@ -181,37 +183,37 @@
       <!-- --------------- HEADER --------------- -->
       <nav id="header">
         <div class="nav-logo">
-          <p class="nav-name">Mr.Febito</p>
+          <p class="nav-name">Form Login</p>
           <span>.</span>
         </div>
-        <div class="nav-menu" id="myNavMenu">
+          <div class="nav-menu" id="myNavMenu">
           <ul class="nav_menu_list">
             <li class="nav_list">
-              <a href="index.html" class="nav-link ">Home</a>
+              <a href="index.html" class="nav-link">Home</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="index.html" class="nav-link">About</a>
+              <a href="form.html" class="nav-link ">Form</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="index.html" class="nav-link">Projects</a>
+              <a href="loc.html" class="nav-link">API</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
-              <a href="tutorial.html" class="nav-link active-link">Tutorial</a>
+              <a href="tabel.html" class="nav-link">Tabel</a>
               <div class="circle"></div>
             </li>
-            <!-- <li class="nav_list">
-              <a href="form.html" class="nav-link">Cara membuat Form</a>
+             <li class="nav_list">
+              <a href="conectgithub.html" class="nav-link">Deploy</a>
               <div class="circle"></div>
             </li>
-            <li class="nav_list">
-              <a href="tabel.html" class="nav-link">Cara membuat Tabel</a>
+             <li class="nav_list">
+              <a href="P6.html" class="nav-link">CSS</a>
               <div class="circle"></div>
-            </li> -->
-            <li class="nav_list">
-              <a href="index.html" class="nav-link">Contact</a>
+            </li>
+             <li class="nav_list">
+              <a href="kanvas.html" class="nav-link">Kanvas</a>
               <div class="circle"></div>
             </li>
           </ul>
@@ -354,6 +356,196 @@
         </div>
       </div>
     </div>
+
+    <!-- -------------- MAIN ---------------- -->
+      <main class="wrapper">
+        <section class="section" id="tutorials">
+          <div class="top-header">
+            <h1>Tutorial membuat Form</h1>
+          </div>
+          <!-- Card Style untuk Latihan Page Margin -->
+          <div class="coba-tutorial">
+            <h2>1. Latihan membuat form Login</h2>
+            <p>
+              Latihan untuk membuat form untuk Login
+            <h3>HTML & CSS Code:</h3>
+            <textarea
+              class="editor"
+              rows="20"
+              id="contentCode"
+              placeholder="Masukkan kode HTML dan CSS di sini"
+            >
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <!--Untuk bagian ikon ikon--!>
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <title>Tutorial Login Form</title>
+    <style>
+      /* Styling dasar untuk seluruh halaman */
+      body {
+        font-family: Arial, sans-serif; /* Menggunakan font Arial */
+        background-color: #eef1ef; /* Warna latar belakang abu terang */
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh; /* Tinggi minimum halaman setara dengan 100% layar */
+      }
+
+      /* Wrapper utama untuk mengatur konten secara terpusat */
+      .page-wrapper {
+        max-width: 800px; /* Maksimal lebar halaman */
+        margin: 0 auto; /* Memusatkan elemen */
+        display: flex;
+        flex-direction: column;
+        gap: 30px; /* Jarak antar elemen */
+      }
+
+      /* Styling untuk container form login */
+      .login-container {
+        background-color: white; /* Latar belakang putih untuk form */
+        padding: 20px;
+        border-radius: 8px; /* Membulatkan sudut form */
+        box-shadow: 0 0 10px rgba(15, 49, 124, 0.538); /* Efek bayangan */
+      }
+
+      /* Header dan paragraf pada form */
+      .login-container h1,
+      p {
+        margin-bottom: 20px; /* Jarak bawah */
+        text-align: center; /* Teks rata tengah */
+      }
+
+      /* Styling untuk input pada form */
+      .login-container input[type="text"],
+      .login-container input[type="password"] {
+        width: 100%; /* Input memiliki lebar penuh */
+        padding: 10px; /* Padding internal */
+        margin: 10px 0; /* Jarak vertikal antar input */
+        border: 1px solid #ccc; /* Border abu-abu terang */
+        border-radius: 20px; /* Membulatkan sudut input */
+        box-sizing: border-box; /* Menghitung padding di dalam lebar input */
+      }
+
+      /* Styling untuk tombol submit, reset, dan button */
+      .login-container input[type="submit"],
+      .login-container input[type="button"],
+      .login-container input[type="reset"] {
+        width: 31%; /* Ukuran tombol disesuaikan agar muat dalam 3 kolom */
+        padding: 15px; /* Padding tombol */
+        border: none; /* Menghapus border default */
+        border-radius: 10px; /* Membulatkan sudut tombol */
+        color: white; /* Teks putih */
+        cursor: pointer; /* Kursor berubah saat hover */
+        margin-top: 10px; /* Jarak di atas tombol */
+        transition: opacity 0.3s; /* Efek halus saat hover */
+      }
+
+      /* Warna khusus untuk tombol submit dan button */
+      .login-container input[type="submit"],
+      .login-container input[type="button"] {
+        background-color: #365486; /* Warna biru untuk tombol utama */
+      }
+
+      /* Warna khusus untuk tombol reset */
+      .login-container input[type="reset"] {
+        background-color: #f44336; /* Warna merah untuk tombol reset */
+      }
+
+      /* Efek hover pada tombol */
+      .login-container input[type="submit"]:hover,
+      .login-container input[type="button"]:hover,
+      .login-container input[type="reset"]:hover {
+        opacity: 0.9; /* Transparansi sedikit saat di-hover */
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Bagian Masuk Tutorial Login -->
+    <div class="page-wrapper">
+      <h1 style="text-align: center">Tutorial Form Login</h1>
+      <!-- Container untuk form login -->
+      <div class="login-container">
+        <h1>Login</h1>
+        <p>Lakukan Login untuk masuk ke dalam website</p>
+
+        <!-- Form login -->
+        <form id="loginForm">
+          <!-- Field untuk username -->
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+
+          <!-- Field untuk password -->
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <!-- Tombol untuk submit, register, dan reset -->
+          <div style="display: flex; justify-content: space-between">
+            <input type="submit" value="Login" />
+            <input type="button" value="Register" onclick="goToRegister()" />
+            <input type="reset" value="Reset" />
+          </div>
+        </form>
+      </div>
+<!-- JavaScript untuk validasi form dan navigasi -->
+    <script>
+      // Validasi form login
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          var password = document.getElementById("password").value;
+
+          // Validasi sederhana untuk password (minimal 6 karakter)
+          if (password.length < 6) {
+            alert("Mohon Maaf, Password anda tidak sesuai");
+            event.preventDefault(); // Mencegah pengiriman form jika password tidak valid
+          }
+        });
+
+      // Fungsi untuk mengarahkan ke halaman register
+      function goToRegister() {
+        window.location.href = "form.html"; // Mengarahkan pengguna ke form.html (halaman register)
+      }
+    </script>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+        </textarea
+            >
+            <button class="run-button" onclick="runContentCode()">Run</button>
+            <button class="undo-button" onclick="undoContentCode()">
+              Undo
+            </button>
+
+            <h3>Hasil:</h3>
+            <div class="preview" id="previewContent"></div>
+          </div>
 
     <!-- JavaScript untuk validasi form dan navigasi -->
     <script>
