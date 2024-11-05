@@ -176,15 +176,14 @@
       </div>
     </div>
 
-   <div id="location">
-        <h3>Your Location:</h3>
-        <!-- Disini akan menampilkan latitude dari lokasi pengguna -->
-        <p>Latitude: <span id="latitude"></span></p>
-        <!-- Disini akan menampilkan Longtitude dari lokasi pengguna -->
-        <p>Longitude: <span id="longitude"></span></p>
-        <!-- Menampilkan tingkat akurasi lokasi  -->
-        <p>Accuracy: <span id="accuracy"></span> meters</p>
-      </div>
+    <div id="location">
+      <h3>Your Location:</h3>
+      <!-- Disini akan menampilkan latitude dari lokasi pengguna -->
+      <p>Latitude: <span id="latitude"></span></p>
+      <!-- Disini akan menampilkan Longtitude dari lokasi pengguna -->
+      <p>Longitude: <span id="longitude"></span></p>
+      <!-- Menampilkan tingkat akurasi lokasi  -->
+      <p>Accuracy: <span id="accuracy"></span> meters</p>
     </div>
 
     <script>
@@ -252,6 +251,16 @@
         button.style.backgroundColor = "#007bff";
       }
     </script>
+    <script>
+      function myMenuFunction() {
+        var menuBtn = document.getElementById("myNavMenu");
 
+        if (menuBtn.className === "nav-menu") {
+          menuBtn.className += " responsive";
+        } else {
+          menuBtn.className = "nav-menu";
+        }
+      }
+    </script>
   </body>
 </html>
